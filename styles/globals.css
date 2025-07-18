@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  @apply bg-white text-gray-900;
+}
+
+main {
+  @apply min-h-screen bg-white px-4 py-6;
+}
+
+.rounded-shadow-box {
+  @apply rounded-2xl shadow-md p-4 bg-white;
+}

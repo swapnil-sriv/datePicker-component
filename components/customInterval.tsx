@@ -10,10 +10,14 @@ const CustomInterval = () => {
   const interval = useSelector((state: RootState) => state.recurrence.interval);
   const type = useSelector((state: RootState) => state.recurrence.type);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Math.max(1, parseInt(e.target.value) || 1); 
-    dispatch(setInterval(value));
-  };
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const value = e.target.value;
+  const numeric = parseInt(value);
+  if (!isNaN(numeric) && numeric >= 1) {
+    dispatch(setInterval(numeric));
+  }
+};
+
 
   return (
     <div className="p-4">
@@ -30,7 +34,7 @@ const CustomInterval = () => {
           className="w-20 px-3 py-1.5 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
         />
         <span className="text-gray-700">
-          {interval > 1 ? `${type}s` : type}
+          {interval > 1 ? `${type=='daily'?'days':(type=='monthly'?'months':(type=='weekly'?'weeks':'years'))}` : type}
         </span>
       </div>
     </div>

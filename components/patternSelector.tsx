@@ -17,6 +17,7 @@ const PatternSelector = () => {
 
   const updatePattern = (newOrder: string, newDay: string) => {
     dispatch(setPattern(`${newOrder} ${newDay}`));
+
   };
 
   if (type !== 'monthly' && type !== 'yearly') return null;

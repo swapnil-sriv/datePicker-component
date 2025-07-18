@@ -1,9 +1,10 @@
 import Head from 'next/head';
-import RecurrenceOptions from '../components/RecurrenceOptions';
+import RecurrenceOptions from '../components/recurrenceOptions';
 import CustomInterval from '../components/customInterval';
-import DaySelector from '@/components/daySelector';
-import PatternSelector from '@/components/patternSelector';
-import DateRangePicker from '@/components/dateRangePicker';
+import DaySelector from '../components/daySelector';
+import PatternSelector from '../components/patternSelector';
+import DateRangePicker from '../components/dateRangePicker';
+import CalendarPreview from '../components/calendarPreview';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
           <DaySelector/>
           <PatternSelector/>
           <DateRangePicker/>
+          <CalendarPreview/>
         </div>
       </main>
     </>

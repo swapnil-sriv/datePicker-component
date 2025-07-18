@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type RecurrenceType = 'daily' | 'weekly' | 'monthly' | 'yearly';
+export type RecurrenceType = 'daily' | 'weekly' | 'monthly' | 'yearly';
 
 interface RecurrenceState {
   type: RecurrenceType;
@@ -53,5 +53,6 @@ export const {
   setStartDate,
   setEndDate,
 } = recurrenceSlice.actions;
+
 
 export default recurrenceSlice.reducer;
